@@ -81,9 +81,9 @@ The **dynaTrace Blog** contains the following 3 blog entries showing the **BizTa
 
 ## Installation
 
-  1. Download and extract the [BizTalk Monitor Plugin](https://community/display/DL/BizTalk+Monitor+Plugin)
+  1. Download and extract the [BizTalk Monitor Plugin](https://github.com/dynaTrace/Dynatrace-BizTalk-Monitor-Plugin)
 
-  2. Extract the attached [FastPack Package](attachments_27230211_1_dynaTrace_BizTalk_FastPack.zip) locally to the computer where the dynaTrace Client is installed. 
+  2. Extract the attached [FastPack Package](dynaTrace_BizTalk_FastPack.zip) locally to the computer where the dynaTrace Client is installed. 
 
   3. Unzip the file. 
 
