@@ -39,6 +39,10 @@
                resource="profiles/BizTalk.profile.xml"
                resource_type="systemProfile">
          </resource>
+		 <resource
+               resource="com.dynatrace.diagnostics.plugin.BizTalkPerfMon_1.0.1.jar"
+               resource_type="userPlugin">
+         </resource>
       </metainfo>
    </extension>
 
