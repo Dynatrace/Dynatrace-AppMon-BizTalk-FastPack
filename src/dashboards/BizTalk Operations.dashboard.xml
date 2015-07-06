@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from dynaTrace Support -->
+<dynatrace version="6.1.0.7880" date="7/6/15 10:00 AM">
+  <dashboardconfig memento.version="6.1.0.7880" icon="com.dynatrace.diagnostics.sdk/default.gif" localizationenabled="false" sessiontype="live" locationassource="true" suppresssavewarning="false" groupname="" authorname="" opendrilldowninnewdashboard="true" sessionid="BizTalk" autoreplacesession="false" modified="2015-07-06T10:00:33-0400" id="5c094ff7-ae33-4c37-bc6a-4a80cafc58fa" revision="0000014e-63ab-1762-8e05-6f12f2be2e42" description="" name="BizTalk Operations" modifiedbyname="pfhrib0" locationascomparesource="false">
+    <reportconfig lines.per.table="100" pagesize="A4" enabled="true" print.legends="true" orientation="portrait" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" optimizeequalcolumns="true" type="PDF" title="" override="false" levels.per.tree="10" description="" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" print.images="true" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion completepurepath="true" type="agents" mode="all">
+        <textpattern enabled="true" name="agentname" type="contains" />
+        <textpattern enabled="true" name="agenthost" type="contains" />
+      </criterion>
+      <criterion type="and" />
+      <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+      <criterion type="applications" mode="all" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" showjavascript="true" type="browserpathtype" />
+      <criterion timerenabled="false" pageenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern text="" match="contains" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern text="" match="contains" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+      <criterion isactive="true" analyzeserverpath="true" type="enduserpath" analyzeenduserpath="true" analyzeclienterrors="false" />
+      <criterion completepurepath="true" type="hosts" mode="all" />
+      <criterion severities="" statesmode="all" severitiesmode="all" states="" rulesmode="all" type="incident" />
+      <criterion type="or" />
+      <criterion enduser="false" type="purepaths" mode="all">
+        <textpattern enabled="true" type="contains" />
+      </criterion>
+      <criterion showrendering="true" isactive="false" contenttypegroupsmode="all" javascripttriggersmode="all" shownetwork="true" showjavascript="true" type="riapurepathtype" requestcriterion="ALL" />
+      <criterion includemeasurename="true" includetestname="true" type="tests" />
+      <criterion enabled="false" filterbyid="false" type="threads" />
+      <criterion type="timeframe">
+        <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern enabled="true" name="timerName" type="contains" />
+        <textpattern enabled="true" name="pageContext" type="contains" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern text="" match="contains" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern text="" match="contains" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" enabled="true" time="5" />
+    <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" descriptionfontsize="8" nameshow="true" clienttheme="DEFAULT" headertype="DEFAULT" namefontsize="10" descriptionshow="true" autoadjustfontsizes="false" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+    <dashboardlayout>
+      <portletfolder relationtype="LEFT" ratio="0.95" folderid="org.eclipse.ui.internal.ViewStack@11f59e6" selectionindex="0" relatedfolderid="DashboardLayout.blankArea" portletconfigorder="fa4c63ec-150c-457a-a07a-a9837afe2167">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.49833518" folderid="org.eclipse.ui.internal.ViewStack@1245d4e" selectionindex="-1" isplaceholder="true" relatedfolderid="org.eclipse.ui.internal.ViewStack@11f59e6" portletconfigorder="" />
+      <portletfolder relationtype="BOTTOM" ratio="0.49833518" folderid="org.eclipse.ui.internal.ViewStack@43d25e" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@11f59e6" portletconfigorder="1836788c-09c8-4c71-bed3-178f2bca66e4">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.49886277" folderid="org.eclipse.ui.internal.ViewStack@1418439" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@43d25e" portletconfigorder="ae3405c9-ed1e-4a4a-b3df-38714ef1e8c0">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.5" folderid="org.eclipse.ui.internal.ViewStack@1105519" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1418439" portletconfigorder="659b53c1-c3ec-4ae6-8c71-b3c403c33817">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.5" folderid="org.eclipse.ui.internal.ViewStack@1d03ad0" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@43d25e" portletconfigorder="00a81dfe-7ac1-4ff0-8ff7-8974d660584e">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.4988864" folderid="org.eclipse.ui.internal.ViewStack@12a9736" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@11f59e6" portletconfigorder="b67e477a-750a-4d1a-b11a-e9b9bfb1f6e8">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.33206975" folderid="org.eclipse.ui.internal.ViewStack@14224c1" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@12a9736" portletconfigorder="8ed1b8b4-8ac1-4b14-8ea2-b5f090277f04">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.49943247" folderid="org.eclipse.ui.internal.ViewStack@149d4fc" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@14224c1" portletconfigorder="fbe00fc7-351f-4750-8d44-8d381ce87e22">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.4977778" folderid="org.eclipse.ui.internal.ViewStack@39d146" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@149d4fc" portletconfigorder="4015e303-79a8-41b3-a220-fae7165ba77f">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.4977778" folderid="org.eclipse.ui.internal.ViewStack@14d52b9" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@14224c1" portletconfigorder="97d370b1-0ca0-4fb4-848c-abe3fe60aece">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.4977778" folderid="org.eclipse.ui.internal.ViewStack@1544359" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@12a9736" portletconfigorder="4ed5e52a-9ea9-4f9f-8f55-8c84c467849d">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@14224c1" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="8ed1b8b4-8ac1-4b14-8ea2-b5f090277f04" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="Threads and Handles" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@14d52b9" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="97d370b1-0ca0-4fb4-848c-abe3fe60aece" addfilterinfo="false" description="" lastvalue="false" name="Threads and Handles" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="LineChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition scale="true" host="true" measure="true" avg="true">
+            <pielabelcomposition scale="true" host="true" measure="true" avg="true" />
+          </legendcomposition>
+          <chartsource position="2" scale="0" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Max" uiunit="number" groupingvalue="" id="858f3874-20c5-4df6-9068-5ed068d023bd" fetchmeasurecolor="true" overridesource="true" rate="10s" ratesupported="false" name="Current Thread count" sourcecolor="RGB(192,64,192,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="number" systemid="BizTalk" measuretype="ProcessPerformanceMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="Current Thread count" metricgroupkey="Process Performance" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid="Current Thread count" measuretype="ProcessPerformanceMeasure" metrickeyid="Current Thread count" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="number" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="1" scale="0" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Max" uiunit="number" groupingvalue="" id="a442e006-777f-4108-afe6-4b691b908646" fetchmeasurecolor="true" overridesource="true" rate="10s" ratesupported="false" name="Handle count" sourcecolor="RGB(192,64,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="number" systemid="BizTalk" measuretype="ProcessPerformanceMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="Handle count" metricgroupkey="Process Performance" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid="Handle count" measuretype="ProcessPerformanceMeasure" metrickeyid="Handle count" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="number" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="150" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="105" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1418439" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="ae3405c9-ed1e-4a4a-b3df-38714ef1e8c0" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="Most often used Pipelines and Orchestrations" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@12a9736" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="b67e477a-750a-4d1a-b11a-e9b9bfb1f6e8" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="Message Processing Duration" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@11f59e6" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(0,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="fa4c63ec-150c-457a-a07a-a9837afe2167" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="BizTalk Server - 192.168.1.39" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="2" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="12" style="BOLD" name="Arial" />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@149d4fc" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="fbe00fc7-351f-4750-8d44-8d381ce87e22" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="I/O" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1d03ad0" sessiontype="live" displaymode="Base" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="00a81dfe-7ac1-4ff0-8ff7-8974d660584e" addfilterinfo="false" description="" name="Slowest Transactions" typeid="com.dynatrace.diagnostics.portlets.transaction.Transaction" ismaster="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="1" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="and" />
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
+        <criterion type="or" />
+        <criterion enduser="false" type="purepaths" mode="all">
+          <textpattern enabled="true" type="contains" />
+        </criterion>
+        <criterion enabled="false" filterbyid="false" type="threads" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="false" columnlabel="" maxnrofrecords="10" customdefaultcolumnindex="0" customdefaultcolumnlabel="" columnindex="0" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern enabled="true" name="timerName" type="contains" />
+          <textpattern enabled="true" name="pageContext" type="contains" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern text="" match="contains" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern text="" match="contains" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="500,500" displayoption="TABLE" />
+      <datamodelconfig>
+        <table drawcolumn="-1" sortcolumn="6" columnorder="18,6,2,0,1,19,4,5,3,7,8,9,10,11,12,13,14,15,16,17">
+          <dyncolumns />
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="153" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="160" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="277" />
+          <column index="3" sort="Down" forcevisible="false" hidden="false" width="100" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="6" sort="Down" forcevisible="false" hidden="false" width="130" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="160" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="18" sort="None" forcevisible="false" hidden="false" width="20" />
+          <column index="19" sort="None" forcevisible="false" hidden="false" width="90" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters reanalyze="true" analyzerrecordlimit="-1" requiredrilldowndata="true" context="SERVER" />
+      <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="false" showtooltips="false" charttype="PieChart" resolution="Auto" isentitymarkable="false" title="Max" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="false" limititems="true" axis.x.show="true" axis.x.title.show="false" logxaxis="false" showheatfield="true" showvalues="false" showtitle="true" showlegend="false">
+        <legendcomposition measure="true">
+          <pielabelcomposition measure="true" />
+        </legendcomposition>
+        <splitconfig splitmode="AgentGroup" splitlayout="Horizontal" />
+      </chart>
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@43d25e" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="1836788c-09c8-4c71-bed3-178f2bca66e4" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="Slowest Pipelines and Orchestrations" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@39d146" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="4015e303-79a8-41b3-a220-fae7165ba77f" addfilterinfo="false" description="" lastvalue="false" name="IO" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="4" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="StackedBarChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition scale="true" unit="true" host="true" measure="true" avg="true">
+            <pielabelcomposition scale="true" unit="true" host="true" measure="true" avg="true" />
+          </legendcomposition>
+          <chartsource position="1" scale="0" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Max" uiunit="megabytes" groupingvalue="" id="a209cc0a-ac50-4609-860e-93f62aaa210c" fetchmeasurecolor="true" overridesource="true" rate="10s" ratesupported="false" name="I/O bytes read" sourcecolor="RGB(128,0,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="ProcessPerformanceMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="I/O bytes read" metricgroupkey="Process Performance" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid="I/O bytes read" measuretype="ProcessPerformanceMeasure" metrickeyid="I/O bytes read" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="kilobytes" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="2" scale="0" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Max" uiunit="megabytes" groupingvalue="" id="60a436d6-da4c-4caf-9ec7-1b6bacf4f94d" fetchmeasurecolor="true" overridesource="true" rate="10s" ratesupported="false" name="I/O bytes written" sourcecolor="RGB(128,128,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="ProcessPerformanceMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="I/O bytes written" metricgroupkey="Process Performance" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid="I/O bytes written" measuretype="ProcessPerformanceMeasure" metrickeyid="I/O bytes written" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="kilobytes" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="150" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="105" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1544359" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="4ed5e52a-9ea9-4f9f-8f55-8c84c467849d" addfilterinfo="false" description="" lastvalue="false" name="Chart" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="0" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="LineChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="true" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="false">
+          <legendcomposition host="true" measure="true" agent="true">
+            <pielabelcomposition host="true" measure="true" agent="true" />
+          </legendcomposition>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="ms" groupingvalue="" id="8daa22b9-b82d-36c7-aa03-83448ae3085d" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="false" name="Time of ProcessMessage" sourcecolor="RGB(0,64,128,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="ms" systemid="BizTalk" measuretype="MethodMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid="Time of ProcessMessage" metricgroupkey="Methods" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid="Time of ProcessMessage" measuretype="MethodMeasure" metrickeyid="Time" agentname="BizTalkServerApplication" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="ms" agentname="BizTalkServerApplication" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="1" scale="-2147483648" visible="false" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="ms" groupingvalue="" id="02700cee-bcdf-4875-bfda-8a71cb0ef839" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="false" name="Time of ProcessMessage" sourcecolor="RGB(0,64,128,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" groupingcriterion="AgentOrMonitor" displayrate="auto" unit="ms" systemid="BizTalk" measuretype="MethodMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid="Time of ProcessMessage" metricgroupkey="Methods" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid="Time of ProcessMessage" measuretype="MethodMeasure" metrickeyid="Time" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="ms" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="ms" groupingvalue="" id="1ea961b8-69a1-3b13-83a9-468ac1d81e92" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="false" name="Time of ProcessMessage" sourcecolor="RGB(0,64,128,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="ms" systemid="BizTalk" measuretype="MethodMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid="Time of ProcessMessage" metricgroupkey="Methods" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid="Time of ProcessMessage" measuretype="MethodMeasure" metrickeyid="Time" agentname="BizTalk - All in one group" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="ms" agentname="BizTalk - All in one group" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="AgentName" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="150" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="217" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="105" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1105519" sessiontype="live" displaymode="Base" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="659b53c1-c3ec-4ae6-8c71-b3c403c33817" addfilterinfo="false" description="" name="Top Transactions" typeid="com.dynatrace.diagnostics.portlets.transaction.Transaction" ismaster="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="2" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="and" />
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
+        <criterion type="or" />
+        <criterion enduser="false" type="purepaths" mode="all">
+          <textpattern enabled="true" type="contains" />
+        </criterion>
+        <criterion enabled="false" filterbyid="false" type="threads" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="false" columnlabel="Count" maxnrofrecords="10" customdefaultcolumnindex="3" customdefaultcolumnlabel="Count" columnindex="3" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern enabled="true" name="timerName" type="contains" />
+          <textpattern enabled="true" name="pageContext" type="contains" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern text="" match="contains" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern text="" match="contains" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="950,49" displayoption="CHART_AND_TABLE" />
+      <datamodelconfig>
+        <table drawcolumn="-1" sortcolumn="3" columnorder="18,3,2,0,1,19,4,5,6,7,8,9,10,11,12,13,14,15,16,17">
+          <dyncolumns />
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="160" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="160" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="327" />
+          <column index="3" sort="Down" forcevisible="false" hidden="false" width="100" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="6" sort="Down" forcevisible="false" hidden="false" width="130" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="160" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="130" />
+          <column index="18" sort="None" forcevisible="false" hidden="false" width="20" />
+          <column index="19" sort="None" forcevisible="false" hidden="false" width="90" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters reanalyze="true" analyzerrecordlimit="-1" requiredrilldowndata="true" context="SERVER" />
+      <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="false" showtooltips="false" charttype="PieChart" resolution="Auto" isentitymarkable="false" title="Splittings" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="false" limititems="true" axis.x.show="true" axis.x.title.show="false" logxaxis="false" showheatfield="true" showvalues="false" showtitle="true" showlegend="false">
+        <legendcomposition measure="true">
+          <pielabelcomposition measure="true" />
+        </legendcomposition>
+        <splitconfig splitmode="AgentGroup" splitlayout="Horizontal" />
+      </chart>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>
+

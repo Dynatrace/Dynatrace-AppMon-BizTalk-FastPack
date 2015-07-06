@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from dynaTrace Support -->
+<dynatrace version="6.1.0.7880" date="7/6/15 10:00 AM">
+  <dashboardconfig memento.version="6.1.0.7880" icon="com.dynatrace.diagnostics.sdk/default.gif" localizationenabled="false" sessiontype="live" locationassource="true" suppresssavewarning="false" groupname="" authorname="" opendrilldowninnewdashboard="true" sessionid="BizTalk" autoreplacesession="false" modified="2015-07-06T10:00:40-0400" id="efe4e371-66b0-46d9-9493-e8885c7b024d" revision="0000014e-63ab-3229-93f0-93dc7f8aa531" description="" name="BizTalk Architect" modifiedbyname="pfhrib0" locationascomparesource="false">
+    <reportconfig lines.per.table="100" pagesize="A4" enabled="true" print.legends="true" orientation="portrait" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" optimizeequalcolumns="true" type="PDF" title="" override="false" levels.per.tree="10" description="" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" print.images="true" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion completepurepath="true" type="agents" mode="all">
+        <textpattern enabled="true" name="agentname" type="contains" />
+        <textpattern enabled="true" name="agenthost" type="contains" />
+      </criterion>
+      <criterion type="and" />
+      <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+      <criterion type="applications" mode="all" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" showjavascript="true" type="browserpathtype" />
+      <criterion timerenabled="false" pageenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern text="" match="contains" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern text="" match="contains" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+      <criterion isactive="true" analyzeserverpath="true" type="enduserpath" analyzeenduserpath="true" analyzeclienterrors="false" />
+      <criterion completepurepath="true" type="hosts" mode="all" />
+      <criterion severities="" statesmode="all" severitiesmode="all" states="" rulesmode="all" type="incident" />
+      <criterion type="or" />
+      <criterion enduser="false" type="purepaths" mode="all">
+        <textpattern enabled="true" type="contains" />
+      </criterion>
+      <criterion showrendering="true" isactive="false" contenttypegroupsmode="all" javascripttriggersmode="all" shownetwork="true" showjavascript="true" type="riapurepathtype" requestcriterion="ALL" />
+      <criterion includemeasurename="true" includetestname="true" type="tests" />
+      <criterion enabled="false" filterbyid="false" type="threads" />
+      <criterion type="timeframe">
+        <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern enabled="true" name="timerName" type="contains" />
+        <textpattern enabled="true" name="pageContext" type="contains" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern text="" match="contains" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern text="" match="contains" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="SECONDS" enabled="true" time="10" />
+    <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" descriptionfontsize="8" nameshow="true" clienttheme="DEFAULT" headertype="DEFAULT" namefontsize="10" descriptionshow="true" autoadjustfontsizes="false" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+    <dashboardlayout>
+      <portletfolder relationtype="LEFT" ratio="0.95" folderid="org.eclipse.ui.internal.ViewStack@c79b54" selectionindex="0" relatedfolderid="DashboardLayout.blankArea" portletconfigorder="36afa297-a00d-45e5-940d-59ca57bf4dc2">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.7480577" folderid="org.eclipse.ui.internal.ViewStack@1f58f55" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@c79b54" portletconfigorder="0eca02e6-524a-4d88-856a-495a1451dede">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="DEFAULT" namealignment="CENTER" inherited="true" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.6515151" folderid="org.eclipse.ui.internal.ViewStack@1b47f0c" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1f58f55" portletconfigorder="b1b2773f-7511-465d-bf9c-ec971d4b4b36, 679139b5-f7eb-4906-b930-466cc7eb0c42">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="DEFAULT" namealignment="CENTER" inherited="true" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.5" folderid="org.eclipse.ui.internal.ViewStack@192b993" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1f58f55" portletconfigorder="21467ec6-5c5b-470d-8698-785bd614da96">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="DEFAULT" namealignment="CENTER" inherited="true" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.49851632" folderid="org.eclipse.ui.internal.ViewStack@f0747b" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@c79b54" portletconfigorder="66de6633-d27e-4611-a4dd-2c18eb41becb">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.49886277" folderid="org.eclipse.ui.internal.ViewStack@2cf941" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@f0747b" portletconfigorder="aa3d2c05-d0aa-4421-a754-695e8bd80267">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.5" folderid="org.eclipse.ui.internal.ViewStack@e0b2dd" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@2cf941" portletconfigorder="118a64dc-4b96-4007-acd0-e62eeb9d0a9e">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.49704143" folderid="org.eclipse.ui.internal.ViewStack@12d2ff1" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@e0b2dd" portletconfigorder="ee699d9f-2a95-4b17-a69c-a95937512029">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.49704143" folderid="org.eclipse.ui.internal.ViewStack@9ba8d0" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@f0747b" portletconfigorder="3a1eaccb-4427-4fbc-a7d4-788ef19bc7c6">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.5" folderid="org.eclipse.ui.internal.ViewStack@10bf6ba" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@9ba8d0" portletconfigorder="5c5ef94d-c2e9-4fae-a034-71f4023c3247">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" headertype="HEADLESS" namealignment="CENTER" inherited="false" namefontsize="10" descriptionfontsize="8" descriptionshow="true" descriptionfontcolor="128,128,128" namefontstyle="BOLD" nameshow="true" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@2cf941" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="aa3d2c05-d0aa-4421-a754-695e8bd80267" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="Memory and Garbage Collection" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1b47f0c" sessiontype="live" displaymode="Base" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="b1b2773f-7511-465d-bf9c-ec971d4b4b36" addfilterinfo="false" description="The Database Dashlet displays executed SQL statements including Bind Values if capturing is enabled." name="Top 10 SQL Count" typeid="com.dynatrace.diagnostics.portlets.database.Database" ismaster="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="1" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="and" />
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion showrendering="true" isactive="true" shownetwork="true" showjavascript="true" type="browserpathtype" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+        <criterion isactive="true" analyzeserverpath="true" type="enduserpath" analyzeenduserpath="true" analyzeclienterrors="false" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
+        <criterion type="or" />
+        <criterion enduser="false" type="purepaths" mode="all">
+          <textpattern enabled="true" type="contains" />
+        </criterion>
+        <criterion enabled="false" filterbyid="false" type="threads" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="true" columnlabel="ExecCount" maxnrofrecords="10" customdefaultcolumnindex="0" customdefaultcolumnlabel="" columnindex="3" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern enabled="true" name="timerName" type="contains" />
+          <textpattern enabled="true" name="pageContext" type="contains" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern text="" match="contains" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern text="" match="contains" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="TABLE" />
+      <datamodelconfig selectedtab="1" chartsortcolumn="31">
+        <table drawcolumn="-1" sortcolumn="27" structuremode="connectionpools" columnorder="0,1,38,2,16,17,18,19,20,21,3,27,32,29,6,7,8,13,23,9,4,35,5,10,11,24,12,14,15,22,25,26,28,34,30,31,36,37,33">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="3" sort="None" forcevisible="false" hidden="true" width="340" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="20" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="21" sort="None" forcevisible="false" hidden="true" width="200" />
+          <column index="22" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="23" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="24" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="25" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="Down" forcevisible="false" hidden="false" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="30" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="31" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="32" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="33" sort="None" forcevisible="false" hidden="true" width="20" />
+          <column index="34" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="35" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="36" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="37" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="38" sort="None" forcevisible="false" hidden="true" width="300" />
+        </table>
+        <table drawcolumn="-1" sortcolumn="30" structuremode="flat" columnorder="0,1,38,2,16,17,18,19,20,21,3,30,4,5,6,7,8,29,9,35,13,23,10,11,12,24,14,15,22,25,26,27,28,34,31,32,36,37,33">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="3" sort="None" forcevisible="false" hidden="true" width="340" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="20" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="21" sort="None" forcevisible="false" hidden="true" width="200" />
+          <column index="22" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="23" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="24" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="25" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="30" sort="Down" forcevisible="false" hidden="false" width="120" />
+          <column index="31" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="32" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="33" sort="None" forcevisible="false" hidden="true" width="20" />
+          <column index="34" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="35" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="36" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="37" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="38" sort="None" forcevisible="false" hidden="true" width="300" />
+        </table>
+        <table drawcolumn="-1" sortcolumn="10" structuremode="poolusage" columnorder="0,1,38,2,22,16,17,18,19,20,21,3,4,5,6,7,8,9,10,11,15,13,24,12,23,14,35,25,26,27,28,34,29,30,31,32,36,37,33">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="3" sort="None" forcevisible="false" hidden="true" width="340" />
+          <column index="4" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="6" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="10" sort="Down" forcevisible="false" hidden="false" width="140" />
+          <column index="11" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="14" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="15" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="20" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="21" sort="None" forcevisible="false" hidden="true" width="200" />
+          <column index="22" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="23" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="24" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="25" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="30" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="31" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="32" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="33" sort="None" forcevisible="false" hidden="true" width="20" />
+          <column index="34" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="35" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="36" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="37" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="38" sort="None" forcevisible="false" hidden="true" width="300" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters fixmissingpools="true" fixinsignificantpools="true" analyzerrecordlimit="-1" requiredrilldowndata="true" analyzergrouping="sqlstatement">
+        <keysmap />
+      </analyzerparameters>
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@12d2ff1" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="ee699d9f-2a95-4b17-a69c-a95937512029" addfilterinfo="false" description="The Chart Dashlet displays the observation and analysis of the System under Diagnosis components over time." lastvalue="false" name="GC Activity" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="4" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="StackedAreaChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition aggregation="true" scale="true" unit="true" measure="true">
+            <pielabelcomposition aggregation="true" scale="true" unit="true" measure="true" />
+          </legendcomposition>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="9b101d28-7aae-30a6-8345-f39e81d73449" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 0)" sourcecolor="RGB(192,0,192,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Garbage Collection (# Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 0)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="number" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="percent" groupingvalue="" fetchmeasurecolor="true" id="c2b93a83-3046-310d-98b0-9a07ea691a07" displayrate="auto" systemid="BizTalk" unit="percent" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (% in GC)" sourcecolor="RGB(128,0,128,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (% in GC)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Garbage Collection (% in GC)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (% in GC)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="percent" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="f1eb01aa-127d-3d12-86ad-877ffcad1ef6" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 2)" sourcecolor="RGB(192,0,128,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Garbage Collection (# Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 2)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="number" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="1" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" uiunit="number" groupingvalue="" id="fa64eb61-badc-4fb4-bb2a-f8d24711b5cd" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 0)" sourcecolor="RGB(81,255,81,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="number" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Garbage Collection (# Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 0)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="number" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="percent" groupingvalue="" fetchmeasurecolor="true" id="26495481-25a1-3acd-a647-1d50f28cfa64" displayrate="auto" systemid="BizTalk" unit="percent" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (% in GC)" sourcecolor="RGB(128,0,128,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (% in GC)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="agrab_vm2k3r2" parentkeyid=".NET Garbage Collection (% in GC)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (% in GC)" agentname="SharePoint - 80[SharePoint - 80]" />
+            <displaysourceinfo agenthost="agrab_vm2k3r2" measureunit="percent" agentname="SharePoint - 80[SharePoint - 80]" agentgroup="SharePoint" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="4" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" uiunit="percent" groupingvalue="" id="2d896e0b-c8d4-4f88-a141-b2968572c191" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="false" name=".NET Garbage Collection (% in GC)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="percent" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (% in GC)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Garbage Collection (% in GC)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (% in GC)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="percent" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="2ffde0f2-9fcd-3b6c-9eab-ff109195e2af" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 2)" sourcecolor="RGB(192,0,128,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="agrab_vm2k3r2" parentkeyid=".NET Garbage Collection (# Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 2)" agentname="SharePoint - 80[SharePoint - 80]" />
+            <displaysourceinfo agenthost="agrab_vm2k3r2" measureunit="number" agentname="SharePoint - 80[SharePoint - 80]" agentgroup="SharePoint" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="317ad79a-3452-3387-af23-7d86a94ea9cd" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 1)" sourcecolor="RGB(0,128,64,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Garbage Collection (# Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 1)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="number" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="340056c3-5803-37ba-918e-4702c76aabd1" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 2)" sourcecolor="RGB(192,0,128,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Garbage Collection (# Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 2)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="number" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="392cf661-995a-32c7-a2f5-c5f84d255b64" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 0)" sourcecolor="RGB(192,0,192,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Garbage Collection (# Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 0)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="number" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="percent" groupingvalue="" fetchmeasurecolor="true" id="49cbce6a-24f6-31dc-8593-5514843bf2c3" displayrate="auto" systemid="BizTalk" unit="percent" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (% in GC)" sourcecolor="RGB(128,0,128,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (% in GC)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Garbage Collection (% in GC)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (% in GC)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="percent" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="4deb3d68-1eb4-3052-b024-fb91bd99efe1" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 1)" sourcecolor="RGB(0,128,64,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="agrab_vm2k3r2" parentkeyid=".NET Garbage Collection (# Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 1)" agentname="SharePoint - 80[SharePoint - 80]" />
+            <displaysourceinfo agenthost="agrab_vm2k3r2" measureunit="number" agentname="SharePoint - 80[SharePoint - 80]" agentgroup="SharePoint" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="4f9ce4f9-c790-3463-9064-5309cd06e245" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 0)" sourcecolor="RGB(192,0,192,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="agrab_vm2k3r2" parentkeyid=".NET Garbage Collection (# Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 0)" agentname="SharePoint - 80[SharePoint - 80]" />
+            <displaysourceinfo agenthost="agrab_vm2k3r2" measureunit="number" agentname="SharePoint - 80[SharePoint - 80]" agentgroup="SharePoint" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="3" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" uiunit="number" groupingvalue="" id="5b6e66f7-d8b6-497c-b7a8-10adea2ea9c1" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="number" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Garbage Collection (# Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 2)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="number" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Avg" autounit="false" sessionid="BizTalk" uiunit="number" groupingvalue="" fetchmeasurecolor="true" id="6d0fdbaf-23c2-346c-bb19-d2d69d943760" displayrate="auto" systemid="BizTalk" unit="number" overridesource="false" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 1)" sourcecolor="RGB(0,128,64,255)" measuretype="PerfMonMeasure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Garbage Collection (# Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 1)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="number" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="2" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" uiunit="number" groupingvalue="" id="7206caf4-9312-44b6-8d2f-84551d30adfd" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Garbage Collection (# Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" displayrate="auto" unit="number" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Garbage Collection (# Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Garbage Collection (# Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Garbage Collection (# Gen 1)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="number" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="282" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="11" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="105" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1f58f55" sessiontype="live" displaymode="Base" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="0eca02e6-524a-4d88-856a-495a1451dede" addfilterinfo="false" description="The Exceptions Dashlet lists all captured throwable classes, messages, and stack traces of the exception." name="Exceptions" typeid="com.dynatrace.diagnostics.portlets.exception.Exception" ismaster="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="2" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="and" />
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
+        <criterion type="or" />
+        <criterion enduser="false" type="purepaths" mode="all">
+          <textpattern enabled="true" type="contains" />
+        </criterion>
+        <criterion enabled="false" filterbyid="false" type="threads" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="false" columnlabel="" maxnrofrecords="10" customdefaultcolumnindex="0" customdefaultcolumnlabel="" columnindex="0" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern enabled="true" name="timerName" type="contains" />
+          <textpattern enabled="true" name="pageContext" type="contains" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern text="" match="contains" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern text="" match="contains" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <datamodelconfig>
+        <table drawcolumn="-1" sortcolumn="3" columnorder="0,1,2,3,4,5">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="130" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="401" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="130" />
+          <column index="3" sort="Down" forcevisible="false" hidden="false" width="50" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="150" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="150" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="-1" requiredrilldowndata="true" analyzergrouping="throwableClassMessage" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@e0b2dd" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="118a64dc-4b96-4007-acd0-e62eeb9d0a9e" addfilterinfo="false" description="The Chart Dashlet displays the observation and analysis of the System under Diagnosis components over time." lastvalue="false" name="Memory Usage" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="5" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="StackedAreaChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="true" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition aggregation="true" scale="true" unit="true" measure="true">
+            <pielabelcomposition aggregation="true" scale="true" unit="true" measure="true" />
+          </legendcomposition>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="81824d8b-c18a-3882-883b-5b7b4dbf4b54" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="BizTalk - All in one group" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk - All in one group" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="8d4245a7-40e4-3328-9c34-24699459fe72" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="BizTalk - All in one group" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk - All in one group" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="9cc58764-11c8-37bd-82ce-4e9a1e4ddf07" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="dynaTraceApplications1" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications1" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="a76a8658-7729-3abf-a28a-bcbd65c785f5" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="dynaTraceApplications2" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications2" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="ab58282d-74c7-3ce7-8079-22db67c6c3d1" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="dynaTraceApplications2" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications2" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="3" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="b355a0d3-136f-413c-84ae-72bcef65add3" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" groupingcriterion="AgentOrMonitor" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="bytes" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="b9621bb5-794c-3278-9795-f2edd708280e" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="BizTalk IIS[DefaultAppPool]" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk IIS[DefaultAppPool]" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="c0128e62-3896-35d8-9c28-616bb6b984d0" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="BizTalk IIS[DefaultAppPool]" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk IIS[DefaultAppPool]" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="c4e58d48-57c2-3071-82c6-a2394ce69375" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="BizTalk - All in one group" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk - All in one group" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="c94b8080-b338-3980-9e4d-428b7d8b80f4" fetchmeasurecolor="true" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(0,0,192,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="caa3d2a7-9dd3-31bf-89a5-336e85e6f64b" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="BizTalkServerApplication" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalkServerApplication" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="2" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="e051006f-6f28-451b-893a-ebc0ce6af2b5" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" groupingcriterion="AgentOrMonitor" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="bytes" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="1" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="e1d54dec-fbf7-41b9-92c2-1085753fe969" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" groupingcriterion="AgentOrMonitor" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="bytes" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="e29574ef-0f74-3784-8ed9-ef4ff59b4803" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="dynaTraceApplications2" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications2" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="f0da08a6-d2e6-3c29-9b96-ce3c35405a87" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="dynaTraceApplications2" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications2" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="f6dc01a3-1fab-3a76-aea4-438e7a5a57d2" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="BizTalkServerApplication" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalkServerApplication" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="06768f46-f25c-376c-afaa-0f9a29cbe5e9" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="082bf254-b2eb-3b68-93e2-e43288f79877" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="BizTalk IIS[DefaultAppPool]" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk IIS[DefaultAppPool]" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="20b630c3-e09b-379e-9dc8-e3feabe872e5" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="BizTalkServerApplication" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalkServerApplication" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="20e5cc6e-bdd0-308d-9927-3ffe5ff776d6" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="dynaTraceApplications1" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications1" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="325e37cd-42eb-3d8a-bd75-87194f37091d" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="3906d94c-c669-3efa-ae42-33f0e53afb76" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="BizTalk - All in one group" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk - All in one group" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="39aea02d-10ab-3a0f-aa99-293d1b3f5b12" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="4" scale="-2147483648" visible="true" sessiontype="live" colorinheritancemode="parent" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="4055f6c1-ab6a-4c38-bc5a-f3bef618ea4f" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" groupingcriterion="AgentOrMonitor" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="bytes" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="52369c36-7a28-3598-a7f6-634c789307c8" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="BizTalk IIS[DefaultAppPool]" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalk IIS[DefaultAppPool]" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="5a240197-90fa-37fb-8c0b-d615de3ce6c7" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="5b839f66-c988-3e53-8188-9c8f0d3934a1" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Large Object Heap Size)" sourcecolor="RGB(128,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Large Object Heap Size)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Large Object Heap Size)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Large Object Heap Size)" agentname="dynaTraceApplications1" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications1" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="67f256c4-66f9-3ee5-87b5-5420d1f06d2b" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="BizTalkServerApplication" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="BizTalkServerApplication" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="718f0e32-b8c5-3fb5-816a-d47ce4e29a52" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 1)" sourcecolor="RGB(255,255,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 1)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 1)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 1)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="7569c840-3d08-3d55-b2bc-fd5620b8bf88" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 2)" sourcecolor="RGB(255,0,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 2)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="Biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 2)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 2)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="Biztalk2009" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="78039107-b678-3338-8e3b-d40d761d33ca" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="Biztalk" />
+            <displaysourceinfo agenthost="biztalk" measureunit="bytes" agentname="Biztalk" agentgroup="Biztalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="-1" scale="-2147483648" visible="false" sessiontype="live" aggregationtype="Avg" groupingcriterion2="AgentName" uiunit="megabytes" groupingvalue="" id="78153b53-bb05-3d1b-b262-f5b2ae4a99da" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name=".NET Memory Consumption (Heap Size Gen 0)" sourcecolor="RGB(66,255,66,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="true" autounit="false" sessionid="BizTalk" displayrate="auto" unit="megabytes" systemid="BizTalk" measuretype="PerfMonMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid=".NET Memory Consumption (Heap Size Gen 0)" metricgroupkey=".NET Common Language Runtime" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid=".NET Memory Consumption (Heap Size Gen 0)" measuretype="PerfMonMeasure" metrickeyid=".NET Memory Consumption (Heap Size Gen 0)" agentname="dynaTraceApplications1" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="bytes" agentname="dynaTraceApplications1" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="AgentName" splitlayout="Vertical" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="331" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="11" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="105" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@192b993" sessiontype="live" displaymode="Base" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="21467ec6-5c5b-470d-8698-785bd614da96" addfilterinfo="false" description="" name="Web Services" typeid="com.dynatrace.diagnostics.portlets.webservice.WebService" ismaster="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="7" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="and" />
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
+        <criterion type="or" />
+        <criterion enduser="false" type="purepaths" mode="all">
+          <textpattern enabled="true" type="contains" />
+        </criterion>
+        <criterion enabled="false" filterbyid="false" type="threads" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="false" columnlabel="" maxnrofrecords="10" customdefaultcolumnindex="0" customdefaultcolumnlabel="" columnindex="0" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern enabled="true" name="timerName" type="contains" />
+          <textpattern enabled="true" name="pageContext" type="contains" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern text="" match="contains" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern text="" match="contains" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <datamodelconfig>
+        <table drawcolumn="-1" sortcolumn="1" columnorder="30,0,1,4,5,2,31,3,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="20" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="34" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="200" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="150" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="45" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="71" />
+          <column index="6" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="16" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="false" width="110" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="110" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="110" />
+          <column index="20" sort="None" forcevisible="false" hidden="false" width="110" />
+          <column index="21" sort="None" forcevisible="false" hidden="false" width="110" />
+          <column index="22" sort="None" forcevisible="false" hidden="true" width="110" />
+          <column index="23" sort="None" forcevisible="false" hidden="true" width="110" />
+          <column index="24" sort="None" forcevisible="false" hidden="false" width="110" />
+          <column index="25" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="30" sort="None" forcevisible="false" hidden="false" width="20" />
+          <column index="31" sort="None" forcevisible="false" hidden="false" width="90" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@c79b54" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(0,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="36afa297-a00d-45e5-940d-59ca57bf4dc2" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="BizTalk Server - 192.168.1.39" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="2" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="12" style="BOLD" name="Arial" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@9ba8d0" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="3a1eaccb-4427-4fbc-a7d4-788ef19bc7c6" addfilterinfo="false" description="API Layer Break Down." lastvalue="false" name="Layer Breakdown" typeid="com.dynatrace.diagnostics.portlets.chart.LayerBreakdown" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="false" columnlabel="" maxnrofrecords="10" customdefaultcolumnindex="0" customdefaultcolumnlabel="" columnindex="0" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig aggregationparam="0" measuretype="APIExecutionTime" aggregationtype="Avg" fetchdynamicmeasures="true">
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="StackedBarChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="Exec Time in ms" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition measure="true" />
+          </legendcomposition>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="150" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="11" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="105" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@10bf6ba" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="5c5ef94d-c2e9-4fae-a034-71f4023c3247" addfilterinfo="false" description="" lastvalue="false" name="Execution Count" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="6" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="1" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" charttype="ClusteredBarChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="false" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="false">
+          <legendcomposition host="true" measure="true" agent="true">
+            <pielabelcomposition host="true" measure="true" agent="true" />
+          </legendcomposition>
+          <chartsource position="-1" scale="-2147483648" visible="true" sessiontype="live" fetchbaseline="false" dynamicconfig="true" aggregationtype="Count" autounit="false" sessionid="BizTalk" uiunit="ms" groupingvalue="" fetchmeasurecolor="true" id="1c5ee627-09b5-3d6f-b763-3f9c4cab79ef" displayrate="auto" systemid="BizTalk" unit="ms" overridesource="false" rate="10s" ratesupported="false" name="PurePath Duration" sourcecolor="RGB(192,192,128,255)" measuretype="Measure" sourcetype="MEASURE" fetchthreshold="false" fetch.dynamic.measures="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid="PurePath Duration" metricgroupkey="PurePaths" collector="" systemid="BizTalk" application="" agenthost="biztalk2009" parentkeyid="PurePath Duration" measuretype="Measure" metrickeyid="PurePath Duration" agentname="BizTalkServerApplication" />
+            <displaysourceinfo agenthost="biztalk2009" measureunit="ms" agentname="BizTalkServerApplication" agentgroup="BizTalk Agent Group" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="1" scale="-2147483648" visible="false" sessiontype="live" colorinheritancemode="parent" aggregationtype="Count" uiunit="ms" groupingvalue="" id="713d1e80-3981-440c-9344-a2168688347b" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="false" name="PurePath Duration" sourcecolor="RGB(192,192,128,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="BizTalk" groupingcriterion="AgentOrMonitor" displayrate="auto" unit="ms" systemid="BizTalk" measuretype="Measure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="true">
+            <lightweightuniquemeasureidentifier keyid="PurePath Duration" metricgroupkey="PurePaths" collector="" systemid="BizTalk" application="" agenthost="" parentkeyid="PurePath Duration" measuretype="Measure" metrickeyid="PurePath Duration" agentname="" />
+            <displaysourceinfo agenthost="" measureunit="ms" agentname="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="150" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="10" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="false" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="105" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true" deploymentevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@f0747b" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(128,255,255,255)" usedashboardsource="true" heightmode="AdjustToFontSize" id="66de6633-d27e-4611-a4dd-2c18eb41becb" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="Transaction Layer Breakdown and Execution Count" description="" name="Text" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="10" style="NORMAL" name="Arial" />
+    </portletconfig>
+    <portletconfig usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1b47f0c" sessiontype="live" displaymode="Base" locationassource="true" usedashboardsource="true" sessionid="BizTalk" id="679139b5-f7eb-4906-b930-466cc7eb0c42" addfilterinfo="false" description="The Database Dashlet displays executed SQL statements including Bind Values if capturing is enabled." name="Slowest 10 SQL" typeid="com.dynatrace.diagnostics.portlets.database.Database" ismaster="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="0" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="and" />
+        <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+        <criterion type="applications" mode="all" />
+        <criterion showrendering="true" isactive="true" shownetwork="true" showjavascript="true" type="browserpathtype" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+        <criterion isactive="true" analyzeserverpath="true" type="enduserpath" analyzeenduserpath="true" analyzeclienterrors="false" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion usefullanalysis="false" active="false" type="noanalysiscache" />
+        <criterion type="or" />
+        <criterion enduser="false" type="purepaths" mode="all">
+          <textpattern enabled="true" type="contains" />
+        </criterion>
+        <criterion enabled="false" filterbyid="false" type="threads" />
+        <criterion type="timeframe">
+          <timeframe start="1265744580000" type="Custom" end="1265744880000" />
+        </criterion>
+        <criterion sort="highestValues" isactive="true" columnlabel="Exec Avg [ms]" maxnrofrecords="10" customdefaultcolumnindex="0" customdefaultcolumnlabel="" columnindex="4" type="topx" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern enabled="true" name="timerName" type="contains" />
+          <textpattern enabled="true" name="pageContext" type="contains" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern text="" match="contains" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern text="" match="contains" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="TABLE" />
+      <datamodelconfig selectedtab="1" chartsortcolumn="34">
+        <table drawcolumn="-1" sortcolumn="27" columnorder="0,1,38,2,16,17,18,19,20,21,3,27,32,29,6,7,8,13,23,9,4,35,5,10,11,24,12,14,15,22,25,26,28,34,30,31,36,37,33">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="3" sort="None" forcevisible="false" hidden="true" width="340" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="20" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="21" sort="None" forcevisible="false" hidden="true" width="200" />
+          <column index="22" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="23" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="24" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="25" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="Down" forcevisible="false" hidden="false" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="30" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="31" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="32" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="33" sort="None" forcevisible="false" hidden="true" width="20" />
+          <column index="34" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="35" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="36" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="37" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="38" sort="None" forcevisible="false" hidden="true" width="300" />
+        </table>
+        <table drawcolumn="-1" sortcolumn="30" columnorder="0,1,38,2,16,17,18,19,20,21,3,30,4,5,6,7,8,29,9,35,13,23,10,11,12,24,14,15,22,25,26,27,28,34,31,32,36,37,33">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="1" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="3" sort="None" forcevisible="false" hidden="true" width="340" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="5" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="7" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="8" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="9" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="13" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="20" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="21" sort="None" forcevisible="false" hidden="true" width="200" />
+          <column index="22" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="23" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="24" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="25" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="30" sort="Down" forcevisible="false" hidden="false" width="120" />
+          <column index="31" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="32" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="33" sort="None" forcevisible="false" hidden="true" width="20" />
+          <column index="34" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="35" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="36" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="37" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="38" sort="None" forcevisible="false" hidden="true" width="300" />
+        </table>
+        <table drawcolumn="-1" sortcolumn="10" columnorder="0,1,38,2,22,16,17,18,19,20,21,3,4,5,6,7,8,9,10,11,15,13,24,12,23,14,35,25,26,27,28,34,29,30,31,32,36,37,33">
+          <column index="0" sort="None" forcevisible="false" hidden="false" width="300" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="300" />
+          <column index="3" sort="None" forcevisible="false" hidden="true" width="340" />
+          <column index="4" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="6" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="140" />
+          <column index="10" sort="Down" forcevisible="false" hidden="false" width="140" />
+          <column index="11" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="12" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="14" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="15" sort="None" forcevisible="false" hidden="false" width="140" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="20" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="21" sort="None" forcevisible="false" hidden="true" width="200" />
+          <column index="22" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="23" sort="None" forcevisible="false" hidden="false" width="120" />
+          <column index="24" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="25" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="26" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="27" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="28" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="29" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="30" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="31" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="32" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="33" sort="None" forcevisible="false" hidden="true" width="20" />
+          <column index="34" sort="None" forcevisible="false" hidden="true" width="120" />
+          <column index="35" sort="None" forcevisible="false" hidden="false" width="90" />
+          <column index="36" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="37" sort="None" forcevisible="false" hidden="true" width="90" />
+          <column index="38" sort="None" forcevisible="false" hidden="true" width="300" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters fixmissingpools="true" fixinsignificantpools="true" analyzerrecordlimit="-1" requiredrilldowndata="true" analyzergrouping="sqlstatement">
+        <keysmap />
+      </analyzerparameters>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>
+

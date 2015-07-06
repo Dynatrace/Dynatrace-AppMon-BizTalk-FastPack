@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+  <extension id="com.dynatrace.diagnostics.knowledgesensor.dotnet.BizTalk.BizTalk_Debug" point="com.dynatrace.diagnostics.knowledgesensor">
+    <sensorpack>
+      <sensor type="dotnet" key="com.dynatrace.diagnostics.knowledgesensor.dotnet.BizTalk.BizTalk_Debug" description="BizTalk Debug" userdefined="true" group="BizTalk" order="6" defaultorder="0" hint="">
+        <class pattern="System.Threading._ThreadPoolWaitCallback" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="PerformWaitCallbackInternal" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="Threading" inheritance="auto" capture="startPP">
+            <argument pattern="System.Threading._ThreadPoolWaitCallback" capture="false" match="equals" />
+          </method>
+          <method pattern="PerformWaitCallback" match="equals" placed="exclude" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="Threading" inheritance="auto" capture="startPP">
+            <argument pattern="System.Object" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.XLANGs.BizTalk.CrossProcess.AppDomainStubProxy" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern=".ctor" match="equals" placed="exclude" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="XLANGs" inheritance="auto" capture="startPP">
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="Microsoft.XLANGs.BizTalk.ProcessInterface.IMemoryAllocator" capture="false" match="equals" />
+            <argument pattern="System.Collections.IDictionary" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.XLANGs.BizTalk.Process.AppDomainProxy" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Microsoft.XLANGs.BizTalk.ProcessInterface.IAppDomainProxy.ReceiveMessages" match="equals" placed="exclude" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="XLANGs" inheritance="auto" capture="startPP">
+            <argument pattern="System.Object" capture="false" match="equals" />
+          </method>
+          <method pattern="_tryReceiveMessages" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="XLANGs" inheritance="auto" capture="startPP">
+            <argument pattern="System.Object" capture="false" match="equals" />
+          </method>
+          <method pattern="_tryMaterializeAppDomain" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="XLANGs" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="Microsoft.BizTalk.Streaming.XmlBufferedReaderStream" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ReadInternal" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="BizTalk" inheritance="auto" capture="startPP">
+            <argument pattern="System.Byte[]" capture="false" match="equals" />
+            <argument pattern="int" capture="true" match="equals" />
+            <argument pattern="int" capture="true" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.XLANGs.BizTalk.CrossProcess.ThreadPool" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetGlobalPendingWorkItems" match="equals" placed="include" capturereturn="true" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="XLANGs" inheritance="auto" capture="startPP" />
+        </class>
+        <class pattern="Microsoft.BizTalk.PipelineOM.PipelineContext" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Dispose" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="privateType" api="BizTalk" inheritance="auto" capture="startPP" />
+        </class>
+      </sensor>
+    </sensorpack>
+  </extension>
+</plugin>
+

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: dotnet Knowledge Sensor
+Bundle-SymbolicName: com.dynatrace.diagnostics.knowledgesensor.dotnet.BizTalk.BizTalk_Debug;singleton:=true
+Bundle-Version: 3.2.0.1918
+Bundle-Vendor: dynaTrace Diagnostics
+Require-Bundle: com.dynatrace.diagnostics.sdk
