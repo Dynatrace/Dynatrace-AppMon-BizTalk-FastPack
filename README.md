@@ -4,5 +4,5 @@
 
 The dynaTrace FastPack for Microsoft BizTalk Server enables faster performance analysis of BizTalk Environments by providing pre-configured Dashboards, System Profile and Sensor Packs for BizTalk
 
-Find further information in the [dynaTrace community](https://community.compuwareapm.com/community/display/DL/BizTalk+FastPack) 
+Find further information in the [dynaTrace community](https://community.dynatrace.com/community/display/DL/BizTalk+FastPack) 
 
