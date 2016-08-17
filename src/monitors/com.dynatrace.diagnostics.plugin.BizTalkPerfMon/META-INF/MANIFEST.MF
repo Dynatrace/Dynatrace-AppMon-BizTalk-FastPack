@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.dynatrace.diagnostics.plugin.BizTalkPerfMon;s
+ ingleton:=true
+Bundle-Name:   BizTalk Windows Performance Monitor
+Bundle-Version: 1.0.3
+Implementation-Version: 1.0.2
+Bundle-ClassPath: .,lib/org.eclipse.equinox.common_3.4.0.v20080421-200
+ 6.jar
+Built-By: sergio.hinojosa@dynatrace.com
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-ManifestVersion: 2
+Bundle-Vendor: Dynatrace
+

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon" name="BizTalk Windows Performance Monitor">
+    <information>
+      <description value="Reads out PerfMon information from BizTalk, all counters are stored in seperate instances that is called the same name as the BizTalk Hosting Process so the normal Windows Counters can't pull the data out.&#xD;&#xA;Eg. default instance is BizTalkServerApplication and is hosted by BTSNTSvc.exe, so {pid} and {monitored_process} doesn't work propperly." />
+      <category value="Remote" />
+      <supportlevel value="unsupported" />
+      <license value="res/dynaTraceBSD.txt" />
+    </information>
+    <configuration>
+      <property key="auth" label="Authentication" type="boolean" description="Username and password for remote access." default="false" />
+      <property key="username" label="Username" type="string" description="Enter the username for remote access." default="" multiline="false">
+        <visibility>
+          <rule key="auth" value="true" />
+        </visibility>
+      </property>
+      <property key="password" label="Password" type="password" description="Enter the password for the username." default="">
+        <visibility>
+          <rule key="auth" value="true" />
+        </visibility>
+      </property>
+      <property key="domain" label="Domain" type="string" description="Enter the domain for remote access." default="" multiline="false">
+        <visibility>
+          <rule key="auth" value="true" />
+        </visibility>
+      </property>
+      <property key="biztalkinstance" label="BizTalk Instance" type="string" description="Name of the BizTalk Instance for example &quot;BizTalkServerApplication&quot;" default="BizTalkServerApplication" multiline="false" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor" name="BizTalk Windows Performance Monitor">
+    <plugin class="com.dynatrace.diagnostics.plugin.WindowsPerformanceMonitor" configid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup1" name="BizTalk State Counters">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric name="High database session" description="The number of currently opened database sessions exceeds the BizTalk threshold." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High database session" optional="false" />
+      </metric>
+      <metric name="High database size" description="The destination queue depth of all messagebox databases exceeds the BizTalk threshold. If the host publishes to multiple queues, the weighted average across all destination queues is computed (based on recent publish statistics) and compared with the BizTalk threshold." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High database size" optional="false" />
+      </metric>
+      <metric name="High in-process message count" description="The number of in-process messages exceeds the BizTalk threshold." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High in-process message count" optional="false" />
+      </metric>
+      <metric name="High message delivery rate" description="The message delivery rate is higher than the message processing rate." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High message delivery rate" optional="false" />
+      </metric>
+      <metric name="High message publishing rate" description="The message publishing request rate is higher than the message publishing completion rate." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High message publishing rate" optional="false" />
+      </metric>
+      <metric name="High process memory" description="The process memory consumption exceeds the BizTalk threshold." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High process memory" optional="false" />
+      </metric>
+      <metric name="High system memory" description="The system-wide physical memory consumption exceeds the BizTalk threshold." unit="number" defaultrate="none" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High system memory" optional="false" />
+      </metric>
+      <metric name="High thread count" description="The thread count exceeds the BizTalk threshold." unit="number" defaultrate="sec" hidedisplayaggregation="sum count">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="High thread count" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages in the database queues that this process has published. This value is measured by the number of items in the queue tables for all hosts and the number of items in the spool and tracking tables. If a process is publishing to multiple queues, this counter reflects the weighted average of all the queues." name="Database size" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Message Agent" />
+        <property key="counterName" optional="false" value="Database size" />
+      </metric>
+      <!-- currently there is no way to query a total over all instances
+          <metric name="Packets received Errors" unit="number" >
+            <property key="objectName" value="Network Interface" />
+            <property key="counterName" value="Packets Received Errors" />
+         </metric>
+-->
+    </metricgroup>
+    <information>
+      <description value="Provides metrics to query operating system performance parameters via PerfMon." />
+    </information>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup2" name="BizTalk Message Delivery Counters">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" name="Message delivery incoming rate" unit="number" description="The number of messages delivered to the service class per second.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message delivery incoming rate" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message delivery outgoing rate" unit="number" description="The number of messages processed by the service class per second.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message delivery outgoing rate" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message delivery delay (ms)" unit="ms" description="The delay injected in each batch for throttling the delivery of messages.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message delivery delay (ms)" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="A flag indicating whether the system is throttling message delivery (affecting XLANG message processing and outbound transports)." name="Message delivery throttling state" unit="number">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message delivery throttling state" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message delivery throttling state duration" unit="s" description="Seconds spent in the current state (throttling or not throttling) of message delivery throttling.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message delivery throttling state duration" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message delivery throttling user override" unit="number" description="This counter reflects the user override that is monitored by the engine and interpreted as follows:&#xD;&#xA;&#xD;&#xA;    * 0: No override&#xD;&#xA;    * 1: Always throttle message delivery&#xD;&#xA;    * 2: Do not throttle message delivery&#xD;&#xA;">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message delivery throttling user override" optional="false" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup3" name="BizTalk Message Publishing Counters">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" name="Message publishing incoming rate" unit="number" description="The number of message publish requests issued by the service class per second.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message publishing incoming rate" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message publishing outgoing rate" unit="number" description="The number of messages actually published by the service class per second.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message publishing outgoing rate" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message publishing delay (ms)" unit="ms" description="The delay injected in each qualifying batch for throttling the publishing of messages.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message publishing delay (ms)" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message publishing throttling state" unit="number" description="A flag indicating whether the system is throttling message publishing (affecting XLANG message processing and inbound transports).&#xD;&#xA;&#xD;&#xA;    * 0: Not throttling&#xD;&#xA;    * 2: Throttling due to imbalanced message publishing rate (input rate exceeds output rate)&#xD;&#xA;    * 4: Throttling due to process memory pressure&#xD;&#xA;    * 5: Throttling due to system memory pressure&#xD;&#xA;    * 6: Throttling due to database growth&#xD;&#xA;    * 8: Throttling due to high session count&#xD;&#xA;    * 9: Throttling due to high thread count&#xD;&#xA;    * 11: Throttling due to user override on publishing&#xD;&#xA;">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message publishing throttling state" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message publishing throttling state duration" unit="s" description="Seconds spent in the current state (throttling or not throttling) of message publish throttling.">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message publishing throttling state duration" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="Message publishing throttling user override" unit="number" description="This counter reflects the user override that is monitored by the engine and interpreted as follows:&#xD;&#xA;&#xD;&#xA;    * 0: No override&#xD;&#xA;    * 1: Always throttle message publishing&#xD;&#xA;    * 2: Do not throttle message publishing&#xD;&#xA;">
+        <property key="objectName" value="BizTalk:Message Agent" optional="false" />
+        <property key="counterName" value="Message publishing throttling user override" optional="false" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup4" name="BizTalk FILE Adapter">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" description="Number of times file receive adapter failed to lock the file per second." name="FILE Receiver Lock failures/sec" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:FILE Receive Adapter" />
+        <property key="counterName" optional="false" value="Lock failures/sec" />
+      </metric>
+      <metric defaultrate="purepath" name="FILE Receiver Messages received/sec" unit="number" description="Number of messages received by adapter per second.">
+        <property key="objectName" value="BizTalk:FILE Receive Adapter" optional="false" />
+        <property key="counterName" value="Messages received/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages sent by adapter" name="FILE Sender Messages sent" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:FILE Send Adapter" />
+        <property key="counterName" optional="false" value="Messages sent" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages received by adapter" name="FILE Receiver Messages received" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:FILE Receive Adapter" />
+        <property key="counterName" optional="false" value="Messages received" />
+      </metric>
+      <metric defaultrate="purepath" name="FILE Sender Messages sent/sec" unit="number" description="Number of messages sent by adapter per second.">
+        <property key="objectName" value="BizTalk:FILE Send Adapter" optional="false" />
+        <property key="counterName" value="Messages sent/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of bytes received by adapter per second." name="FILE Receiver Bytes received/sec" unit="bytes">
+        <property key="objectName" optional="false" value="BizTalk:FILE Receive Adapter" />
+        <property key="counterName" optional="false" value="Bytes received/Sec" />
+      </metric>
+      <metric defaultrate="purepath" name="FILE Sender Bytes sent/sec" unit="bytes" description="Number of bytes sent by adapter per second.">
+        <property key="objectName" value="BizTalk:FILE Send Adapter" optional="false" />
+        <property key="counterName" value="Bytes sent/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of bytes received by adapter" name="FILE Receiver Bytes received" unit="bytes">
+        <property key="objectName" optional="false" value="BizTalk:FILE Receive Adapter" />
+        <property key="counterName" optional="false" value="Bytes received" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of bytes sent by adapter per second." name="FILE Sender Bytes sent" unit="bytes">
+        <property key="objectName" optional="false" value="BizTalk:FILE Send Adapter" />
+        <property key="counterName" optional="false" value="Bytes sent" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup5" name="BizTalk SOAP Adapter">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" name="SOAP Receiver Messages received/sec" unit="number" description="Number of messages received by adapter per second.">
+        <property key="objectName" value="BizTalk:SOAP Receive Adapter" optional="false" />
+        <property key="counterName" value="Messages received/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="SOAP Sender Messages sent/sec" unit="number" description="Number of messages sent by adapter per second.">
+        <property key="objectName" value="BizTalk:SOAP Send Adapter" optional="false" />
+        <property key="counterName" value="Messages sent/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages received by adapter" name="SOAP Receiver Messages received" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:SOAP Receive Adapter" />
+        <property key="counterName" optional="false" value="Messages received" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages sent by adapter" name="SOAP Sender Messages sent" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:SOAP Send Adapter" />
+        <property key="counterName" optional="false" value="Messages sent" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup6" name="BizTalk SQL Adapter">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" name="SQL Receiver Messages received/sec" unit="number" description="Number of messages received by adapter per second.">
+        <property key="objectName" value="BizTalk:SQL Receive Adapter" optional="false" />
+        <property key="counterName" value="Messages received/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="SQL Sender Message sent/sec" unit="number" description="Number of messages sent by adapter per second.">
+        <property key="objectName" value="BizTalk:SQL Send Adapter" optional="false" />
+        <property key="counterName" value="Messages sent/Sec" optional="false" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup7" name="BizTalk HTTP Send Adapter">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" name="HTTP Sender Messages received/sec" unit="number" description="Number of messages received by adapter per second.">
+        <property key="objectName" value="BizTalk:HTTP Send Adapter" optional="false" />
+        <property key="counterName" value="Messages received/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="HTTP Sender Messages sent/sec" unit="number" description="Number of messages sent by adapter per second.">
+        <property key="objectName" value="BizTalk:HTTP Send Adapter" optional="false" />
+        <property key="counterName" value="Messages sent/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages received by adapter per second." name="HTTP Sender Messages received" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:HTTP Send Adapter" />
+        <property key="counterName" optional="false" value="Messages received" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages sent by adapter per second." name="HTTP Sender Messages sent" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:HTTP Send Adapter" />
+        <property key="counterName" optional="false" value="Messages sent" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup8" name="BizTalk HTTP Receive Adapter">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" name="HTTP Receiver Messages received/sec" unit="number" description="Number of messages received by adapter per second.">
+        <property key="objectName" value="BizTalk:HTTP Receive Adapter" optional="false" />
+        <property key="counterName" value="Messages received/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="HTTP Receiver Messages sent/sec" unit="number" description="Number of messages sent by adapter per second.">
+        <property key="objectName" value="BizTalk:HTTP Receive Adapter" optional="false" />
+        <property key="counterName" value="Messages sent/Sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages received by adapter" name="HTTP Receiver Messages received" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:HTTP Receive Adapter" />
+        <property key="counterName" optional="false" value="Messages received" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages sent by adapter" name="HTTP Receiver Messages sent" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:HTTP Receive Adapter" />
+        <property key="counterName" optional="false" value="Messages sent" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup9" name="BizTalk Messaging" point="com.dynatrace.diagnostics.pdk.monitormetricgroup">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" description="Number of receive locations currently enabled in this host instance." name="Active receive locations" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Active receive locations" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of threads in the Messaging Engine currently processing messages received from adapters running in this host instance. These include messages that have been processed asynchronously by send adapters." name="Active receive threads" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Active receive threads" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages the Messaging Engine has currently in send processing. This includes messages currently in send pipeline processing as well as response messages for receive adapters." name="Active send messages" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Active send messages" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of threads in the Messaging Engine currently processing messages to send to adapters. This includes response messages to receive adapters." name="Active send threads" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Active send threads" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of messages given by the Messaging Engine to send adapters that have not completed processing. This includes response messages for receive adapters." name="Pending transmitted messages" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Pending transmitted messages" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents processed" name="Documents processed" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents processed" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents processed/Sec" name="Documents processed/Sec" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents processed/Sec" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents received" name="Documents received" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents received" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents received/Sec" name="Documents received/Sec" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents received/Sec" />
+      </metric>
+      <metric defaultrate="purepath" description="Total number of documents resubmitted by send adapters." name="Documents resubmitted" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents resubmitted" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents suspended" name="Documents suspended" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents suspended" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents suspended/Sec" name="Documents suspended/Sec" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents suspended/Sec" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents submitted/Batch" name="Documents submitted/Batch" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents submitted/Batch" />
+      </metric>
+      <metric defaultrate="purepath" description="Documents transmitted/Batch" name="Documents transmitted/Batch" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Documents transmitted/Batch" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of request messages that have not received a response message within the time limit specified by the adapter." name="Request/Response timeouts" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Messaging" />
+        <property key="counterName" optional="false" value="Request/Response timeouts" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup10" name="BizTalk Messaging Latency" point="com.dynatrace.diagnostics.pdk.monitormetricgroup">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" description="Average latency in milliseconds from when the Messaging Engine receives a document from the adapter until the time it is published to Message Box." name="Inbound Latency (sec)" unit="ms">
+        <property key="objectName" value="BizTalk:Messaging Latency" optional="false" />
+        <property key="counterName" value="Inbound Latency (sec)" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average latency in milliseconds from when the adapter gets a document from the Messaging Engine until the time it is sent by the adapter." name="Outbound Adapter Latency (sec)" unit="ms">
+        <property key="objectName" value="BizTalk:Messaging Latency" optional="false" />
+        <property key="counterName" value="Outbound Adapter Latency (sec)" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average latency in milliseconds from when the Messaging Engine receives a document from the Message Box until the time document is sent by the adapter." name="Outbound Latency (sec)" unit="ms">
+        <property key="objectName" value="BizTalk:Messaging Latency" optional="false" />
+        <property key="counterName" value="Outbound Latency (sec)" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average latency in milliseconds from when the Messaging Engine receives a request document from the adapter until the time a response document is given back to the adapter." name="Request-Response Latency (sec)" unit="ms">
+        <property key="objectName" value="BizTalk:Messaging Latency" optional="false" />
+        <property key="counterName" value="Inbound Latency (sec)" optional="false" />
+      </metric>
+    </metricgroup>
+  </extension>
+  <extension id="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.metricgroup11" name="BizTalk Orchestration Engine Performance Counters" point="com.dynatrace.diagnostics.pdk.monitormetricgroup">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMon.monitor">
+      <metric defaultrate="purepath" description="Percentage used of total physical memory on the machine." name="% used physical memory" unit="percent">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="% used physical memory" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of loaded orchestration application domains in the process." name="Active application domains" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Active application domains" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of persistence points reached since the host instance started, divided by the number of underlying transactions." name="Average batch factor" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Average batch factor" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of database transactions performed since the host instance started." name="Database transactions" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Database transactions" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number performed per second." name="Database transactions/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Database transactions/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestrations instances that can be dehydrated which are currently hosted by the host instance." name="Dehydratable orchestrations" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Dehydratable orchestrations" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestrations that are in the process of dehydrating." name="Dehydrating orchestrations" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Dehydrating orchestrations" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Indicates whether there is a dehydration cycle currently in progress." name="Dehydration cycle in progress" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Dehydration cycle in progress" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of dehydration cycles completed." name="Dehydration cycles" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Dehydration cycles" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number in milliseconds that determines how aggressively orchestrations are being dehydrated. If the orchestration engine predicts that an instance will be dehydratable for an amount of time longer than this threshold, it will dehydrate the instance." name="Dehydration threshold" unit="ms">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Dehydration threshold" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of idle orchestration instances currently hosted by the host instance. This refers to orchestrations that are not making progress but are not dehydratable, as when the orchestration is blocked waiting for a receive, listen, or delay in an atomic transaction." name="Idle orchestrations" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Idle orchestrations" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Megabytes of allocated private memory for the host instance." name="Megabytes allocated private memory" unit="megabytes">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Megabytes allocated private memory" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Megabytes reserved for virtual memory for the host instance." name="Megabytes allocated virtual memory" unit="megabytes">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Megabytes allocated virtual memory" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of attempted database connections that failed since the host instance started." name="MessageBox database connection failures" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="MessageBox database connection failures" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of MessageBox databases currently available to the application." name="Online MessageBox databases" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Online MessageBox databases" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances completed since the host instance started." name="Orchestrations completed" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations completed" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number completed per second." name="Orchestrations completed/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations completed/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances created since the host instance started." name="Orchestrations created" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations created" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number created per second." name="Orchestrations created/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations created/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances dehydrated since the host instance started." name="Orchestrations dehydrated" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations dehydrated" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number dehydrated per second." name="Orchestrations dehydrated/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations dehydrated/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances discarded from memory since the host instance started. An orchestration can be discarded if the engine fails to persist its state." name="Orchestrations discarded" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations discarded" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number discarded per second." name="Orchestrations discarded/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations discarded/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances rehydrated since the host instance started." name="Orchestrations rehydrated" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations rehydrated" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number rehydrated per second." name="Orchestrations rehydrated/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations rehydrated/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances currently hosted by the host instance." name="Orchestrations resident in memory" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations resident in memory" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of dehydratable orchestrations for which there is a dehydration request pending." name="Orchestrations scheduled for dehydration" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations scheduled for dehydration" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances suspended since the host instance started." name="Orchestrations suspended" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations suspended" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number suspended per second." name="Orchestrations suspended/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Orchestrations suspended/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of received messages for which receipt has not yet been acknowledged to the message box." name="Pending messages" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Pending messages" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of code execution blocks that are scheduled for execution." name="Pending work items" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Pending work items" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of times an orchestration instance has persisted its state to the database since the host instance started." name="Persistence points" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Persistence points" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number of orchestration instances persisted per second." name="Persistence points/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Persistence points/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances ready to execute." name="Runnable orchestrations" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Runnable orchestrations" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of orchestration instances currently executing." name="Running orchestrations" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Running orchestrations" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of long-running or atomic scopes that have been aborted since the host instance started." name="Transactional scopes aborted" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Transactional scopes aborted" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number aborted per second." name="Transactional scopes aborted/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Transactional scopes aborted/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of long-running or atomic scopes that have successfully completed since the host instance started." name="Transactional scopes committed" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Transactional scopes committed" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number committed per second." name="Transactional scopes committed/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Transactional scopes committed/sec" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Number of long-running or atomic scopes that have successfully completed compensation scopes since the application started." name="Transactional scopes compensated" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Transactional scopes compensated" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" description="Average number compensated per second." name="Transactional scopes compensated/sec" unit="number">
+        <property key="objectName" value="XLANG/s Orchestrations" optional="false" />
+        <property key="counterName" value="Transactional scopes compensated/sec" optional="false" />
+      </metric>
+    </metricgroup>
+  </extension>
+</plugin>
