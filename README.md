@@ -1,6 +1,6 @@
 # BizTalk FastPack
 
-![images/logo_biztalk.png](images/logo_biztalk.png =250x)
+![](./images/logo_biztalk.png =250x)
 
 The dynaTrace FastPack for Microsoft BizTalk Server enables faster performance analysis of BizTalk Environments by providing pre-configured Dashboards, System Profile and Sensor Packs for BizTalk
 
