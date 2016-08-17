@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension id="Installer Content" point="com.dynatrace.diagnostics.InstallerContent"> 
+   <metainfo installer_type="resourcepack" name="BizTalk_FastPack"> 
+	<resource  resource="profiles/BizTalk.profile.xml"  resource_type="systemProfile" />
+	<resource  resource="dashboards/BizTalk Adapter Monitor.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="dashboards/BizTalk Architect.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="dashboards/BizTalk Database Health.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="dashboards/BizTalk Deep Analysis.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="dashboards/BizTalk Documents and Pipelines.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="dashboards/BizTalk Orchestration Engine.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="dashboards/BizTalk Performance.dashboard.xml" resource_type="dashboard"/>
+	<resource  resource="ksps/com.dynatrace.diagnostics.knowledgesensor.dotnet.BizTalk.BizTalk/" resource_type="sensorPack"/> 	
+   </metainfo>
+   </extension>
+</plugin>
