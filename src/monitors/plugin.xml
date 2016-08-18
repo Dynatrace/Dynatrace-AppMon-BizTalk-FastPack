@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension id="Installer Content" point="com.dynatrace.diagnostics.InstallerContent"> 
+   <metainfo installer_type="resourcepack" name="BizTalk_Monitors"> 
+   	<resource  resource="com.dynatrace.diagnostics.plugin.BizTalkPerfMon_1.0.3.jar" resource_type="userPlugin"/>
+	<resource  resource="com.dynatrace.diagnostics.plugin.BizTalkPerfMonHost_1.0.3.jar" resource_type="userPlugin"/>
+   	<resource  resource="com.dynatrace.diagnostics.plugin.BizTalkPerfMonMsgBox_1.0.3.jar" resource_type="userPlugin"/>
+   </metainfo>
+   </extension>
+</plugin>

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="6.3.5.1050" date="8/8/16 11:12 AM">
+  <dashboardconfig memento.version="6.3.5.1050" suppresssavewarning="false" created="2016-08-08T11:12:10+0200" sessiontype="live" icon="com.dynatrace.diagnostics.adm/img/adm-dashlet-icon.png" description="" modifiedbyname="sergio.hinojosa.jime" locationascomparesource="false" source="server://redhat" sessionid="BizTalk" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000156-696c-7981-ac2d-91107c3d9c00" locationassource="false" localizationenabled="false" name="BizTalk Deep Analysis" authorname="sergio.hinojosa.jime" modified="2016-08-08T11:12:11+0200" id="0c0fcb99-0c44-4966-b176-73ef3bdc6112">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="all" type="applications" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
+      <criterion pageenabled="false" timerenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern match="contains" text="" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern match="contains" text="" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" type="incident" rulesmode="all" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe start="0" end="9223372036854775807" type="Auto" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+    <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="4a3e38eb-ce5a-441b-a84c-9e64df83ef18, 228015cf-6403-4fb8-9828-c4b7aeb1df2e" folderid="org.eclipse.ui.internal.ViewStack@41bb8bc9" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="0dc90fc4-7dfc-4ab6-8ed8-e7d28e605969" folderid="org.eclipse.ui.internal.ViewStack@54820617" relatedfolderid="org.eclipse.ui.internal.ViewStack@41bb8bc9" ratio="0.4801282">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="c57817ab-c56f-442c-95d9-4f5d21d58ce6" folderid="org.eclipse.ui.internal.ViewStack@76ced8ec" relatedfolderid="org.eclipse.ui.internal.ViewStack@41bb8bc9" ratio="0.47876447">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://redhat" sessionid="BizTalk" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@76ced8ec" locationassource="false" addfilterinfo="false" name="Methods" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.Method" id="c57817ab-c56f-442c-95d9-4f5d21d58ce6" displaymode="Base">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe start="0" end="9223372036854775807" type="Auto" />
+        </criterion>
+        <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="analysiscache" />
+          <inheritanceentry inherited="false" type="and" />
+          <inheritanceentry inherited="false" type="casuemdimension" />
+          <inheritanceentry inherited="false" type="dcrumdimension" />
+          <inheritanceentry inherited="false" type="or" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table structuremode="methodsClass" sortcolumn="6" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22">
+          <column forcevisible="false" hidden="false" width="172" index="0" sort="Up" />
+          <column forcevisible="false" hidden="false" width="18" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="121" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="65" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="69" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="6" sort="Up" />
+          <column forcevisible="false" hidden="true" width="100" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="9" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="101" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="102" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="22" sort="None" />
+        </table>
+        <caller>
+          <table structuremode="methodsClass" sortcolumn="0" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22">
+            <column forcevisible="false" hidden="false" width="300" index="0" sort="Up" />
+            <column forcevisible="false" hidden="false" width="18" index="1" sort="None" />
+            <column forcevisible="false" hidden="false" width="55" index="2" sort="None" />
+            <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+            <column forcevisible="false" hidden="false" width="65" index="4" sort="None" />
+            <column forcevisible="false" hidden="false" width="130" index="5" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="6" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="7" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="8" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="9" sort="None" />
+            <column forcevisible="false" hidden="false" width="80" index="10" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="11" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="12" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="13" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="14" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="15" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="16" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="17" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="18" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="19" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="21" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="22" sort="None" />
+          </table>
+        </caller>
+        <callee>
+          <table structuremode="methodsClass" sortcolumn="0" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22">
+            <column forcevisible="false" hidden="false" width="300" index="0" sort="Up" />
+            <column forcevisible="false" hidden="false" width="18" index="1" sort="None" />
+            <column forcevisible="false" hidden="false" width="55" index="2" sort="None" />
+            <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+            <column forcevisible="false" hidden="false" width="65" index="4" sort="None" />
+            <column forcevisible="false" hidden="false" width="130" index="5" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="6" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="7" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="8" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="9" sort="None" />
+            <column forcevisible="false" hidden="false" width="80" index="10" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="11" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="12" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="13" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="14" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="15" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="16" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="17" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="18" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="19" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+            <column forcevisible="false" hidden="true" width="120" index="21" sort="None" />
+            <column forcevisible="false" hidden="false" width="120" index="22" sort="None" />
+          </table>
+        </callee>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" analyzebrowserpaths="false" />
+      <ccontent enabled="first" ratio="0.666" />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://redhat" sessionid="BizTalk" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@54820617" locationassource="false" addfilterinfo="false" name="BTXService" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.MethodHotspots" id="0dc90fc4-7dfc-4ab6-8ed8-e7d28e605969" displaymode="Base">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="6" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe start="0" end="9223372036854775807" type="Auto" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+          <inheritanceentry inherited="false" type="analysiscache" />
+          <inheritanceentry inherited="false" type="and" />
+          <inheritanceentry inherited="false" type="api" />
+          <inheritanceentry inherited="false" type="applications" />
+          <inheritanceentry inherited="false" type="btm" />
+          <inheritanceentry inherited="false" type="casuemdimension" />
+          <inheritanceentry inherited="false" type="dbdetails" />
+          <inheritanceentry inherited="false" type="dcrumdimension" />
+          <inheritanceentry inherited="false" type="hosts" />
+          <inheritanceentry inherited="false" type="or" />
+          <inheritanceentry inherited="false" type="purepaths" />
+          <inheritanceentry inherited="false" type="threads" />
+          <inheritanceentry inherited="false" type="visits" />
+          <inheritanceentry inherited="false" type="webpage" />
+          <inheritanceentry inherited="false" type="webrequest" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table sortcolumn="1" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7">
+          <column forcevisible="false" hidden="false" width="250" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="70" index="1" sort="Down" />
+          <column forcevisible="false" hidden="false" width="70" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="70" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="70" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="450" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="180" index="7" sort="None" />
+        </table>
+        <table sortcolumn="0" drawcolumn="-1" columnorder="0,1,2,3">
+          <column forcevisible="false" hidden="false" width="450" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="300" index="3" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://redhat" sessionid="BizTalk" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@41bb8bc9" locationassource="false" addfilterinfo="false" name="API Breakdown" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.api.Api" id="228015cf-6403-4fb8-9828-c4b7aeb1df2e" displaymode="Base">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe start="0" end="9223372036854775807" type="Auto" />
+        </criterion>
+        <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="500,500" />
+      <datamodelconfig>
+        <table sortcolumn="1" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20">
+          <column forcevisible="false" hidden="false" width="189" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="1" sort="Up" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="Down" />
+          <column forcevisible="false" hidden="false" width="120" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="1000" requiredrilldowndata="true" />
+      <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="true" logxaxis="false" title="Exec Avg [ms]" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="false" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+        <legendcomposition measure="true">
+          <pielabelcomposition unit="true" measure="true" value="true" />
+        </legendcomposition>
+        <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+      </chart>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" showlatency="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" source="server://redhat" sessionid="BizTalk" folderid="org.eclipse.ui.internal.ViewStack@41bb8bc9" addfilterinfo="false" autozoom="false" yscrollpos="0" ismaster="false" typeid="com.dynatrace.diagnostics.adm.ADM" viewmode="Topology" id="4a3e38eb-ce5a-441b-a84c-9e64df83ef18" displaymode="Base" zoomlevel="0.9" usespecificautorefresh="false" showentrypoints="true" sessiontype="live" locationascomparesource="false" usedashboardsource="true" locationassource="false" showlegend="true" name="Transaction Flow" xscrollpos="0" showdatabase="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="all" type="applications" />
+        <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
+        <criterion type="btm" />
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe start="0" end="9223372036854775807" type="Auto" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table sortcolumn="0" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31">
+          <column forcevisible="false" hidden="false" width="100" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="9" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="14" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="20" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="40" index="23" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="25" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="26" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="27" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="28" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="30" sort="None" />
+          <column forcevisible="false" hidden="false" width="40" index="31" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters fixmissingpools="true" analyzerrecordlimit="-1" requiredrilldowndata="true" fixinsignificantpools="true" analyzeentrypoints="true">
+        <keysmap>
+          <keys agentpropertykey="mainframe.subsystem" extensionspecifickey="com.compuware.strobe.ui.systemId" />
+          <keys agentpropertykey="mainframe.jobname" extensionspecifickey="com.compuware.strobe.ui.jobName" />
+        </keysmap>
+      </analyzerparameters>
+      <expandstates>
+        <expandgroup expandstate="Expanded" agentgroupid="BizTalk|type:2" />
+        <expandgroup expandstate="Expanded" agentgroupid="MessageBox|type:0" />
+        <expandgroup expandstate="Collapsed" agentgroupid="SQL Server|type:0" />
+      </expandstates>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>

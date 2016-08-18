@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+  <extension id="com.dynatrace.diagnostics.plugin.BizTalkPerfMonHost" name="BizTalk MessageBox Performance Monitor (Host Counters)" point="com.dynatrace.diagnostics.pdk.pluginconfig">
+    <information>
+      <description value="Reads out PerfMon information from BizTalk (Host)" />
+      <category value="Remote" />
+      <supportlevel value="unsupported" />
+      <license value="res/dynaTraceBSD.txt" />
+    </information>
+    <configuration>
+      <property key="auth" label="Authentication" type="boolean" description="Username and password for remote access." default="false" />
+      <property key="username" label="Username" type="string" description="Enter the username for remote access." default="" multiline="false">
+        <visibility>
+          <rule key="auth" value="true" />
+        </visibility>
+      </property>
+      <property key="password" label="Password" type="password" description="Enter the password for the username." default="">
+        <visibility>
+          <rule key="auth" value="true" />
+        </visibility>
+      </property>
+      <property key="domain" label="Domain" type="string" description="Enter the domain for remote access." default="" multiline="false">
+        <visibility>
+          <rule key="auth" value="true" />
+        </visibility>
+      </property>
+      <property key="biztalkinstance" label="BizTalk MessageBox Host Instance" type="string" description="Name of the BizTalk ApplicationServer, MessageBox Instance and Host for example  &quot;biztalkserverapplication:biztalkmsgboxdb:biztalkdev&quot;" default="biztalkserverapplication:biztalkmsgboxdb:biztalkdev" multiline="false" />
+    </configuration>
+  </extension>
+  <extension id="com.dynatrace.diagnostics.plugin.BizTalkPerfMonHost.monitor" name="BizTalk MessageBox Performance Monitor (Host Counters)" point="com.dynatrace.diagnostics.pdk.monitor">
+    <plugin class="com.dynatrace.diagnostics.plugin.WindowsPerformanceMonitor" configid="com.dynatrace.diagnostics.plugin.BizTalkPerfMonHost" />
+  </extension>
+  <extension id="com.dynatrace.diagnostics.plugin.BizTalkPerfMonHost.metricgroup1" name="BizTalk MessageBox Host Counters" point="com.dynatrace.diagnostics.pdk.monitormetricgroup">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.BizTalkPerfMonHost.monitor">
+      <metric defaultrate="purepath" description="Tracks the number of message references in the instance state queue for this particular host." name="Host Queue - Instance State Msg Refs - Length" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Message Box:Host Counters" />
+        <property key="counterName" optional="false" value="Host Queue - Instance State Msg Refs - Length" />
+      </metric>
+      <metric defaultrate="purepath" description="Tracks the total number of messages in the particular host queue." name="Host Queue - Length" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Message Box:Host Counters" />
+        <property key="counterName" optional="false" value="Host Queue - Length" />
+      </metric>
+      <metric defaultrate="purepath" description="Tracks the number of instances of this particular host." name="Host Queue - Number of Instances" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Message Box:Host Counters" />
+        <property key="counterName" optional="false" value="Host Queue - Number of Instances" />
+      </metric>
+      <metric defaultrate="purepath" description="Tracks the total number of suspended messages for the particular host." name="Host Queue - Suspended Msgs - Length" unit="number">
+        <property key="objectName" optional="false" value="BizTalk:Message Box:Host Counters" />
+        <property key="counterName" optional="false" value="Host Queue - Suspended Msgs - Length" />
+      </metric>
+    </metricgroup>
+  </extension>
+</plugin>
