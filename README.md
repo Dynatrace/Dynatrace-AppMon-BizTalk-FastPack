@@ -79,6 +79,7 @@ Once you have the Processes mapped to the System Profile, you'll automatically g
 
 <a name="monitors"></a>
 ### Monitors 
+The monitors collect Performance Counters from 3 different instances which are defined at 3 different levels: BizTalk Application, MessageBox and Host.
 
 #### BizTalk MessageBox Performance Monitor (General Counters)
 
