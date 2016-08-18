@@ -45,8 +45,8 @@ The dynaTrace FastPack for BizTalk contains everything to get started with analy
 
 1. Download the latest release of the [BizTalk Monitors FastPack](bin/BizTalk_Monitors_v.5.dtp) and the [BizTalk Profile and Dashboard Fastpack](bin/BizTalk_Profile_v.5.dtp).
 2. In the Dynatrace Client, go to Tools -> Manage Plugins and click "Install Plugin"
-	1. Select the BizTalk Monitors Fastpack .DTP and allow it to install.
-	2. Select the BizTalk Profile and Dashboards .DTP and allow it to install.
+	1. First select and install the BizTalk Monitors Fastpack .DTP
+	2. Secondly select and install the BizTalk Profile and Dashboards .DTP
 
 That's it, you have now installed a set of Monitors and a System Profile with Dashboards for your BizTalk Environment. Now you only need to spefify your BizTalk Servers you want to monitor and map the Agents.
 
