@@ -184,7 +184,7 @@ This dashboard will help developers understand the called methods and indentify 
 ### Dynatrace AppMon Documentation
 
 - [Hosts and System Monitors](https://community.dynatrace.com/community/display/DOCDT63/Monitors)
-- [ISS Web Server Configuration](https://community.dynatrace.com/community/display/DOCDT63/Microsoft+IIS+Web+Server+Agent+Configuration)
+- [IIS Web Server Configuration](https://community.dynatrace.com/community/display/DOCDT63/Microsoft+IIS+Web+Server+Agent+Configuration)
 - [.NET Agent Configuration](https://community.dynatrace.com/community/display/DOCDT63/.NET+Agent+Configuration)
 
 <a name="biztalkperfmon"></a>
