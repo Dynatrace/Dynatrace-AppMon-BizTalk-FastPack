@@ -9,8 +9,6 @@ Find further information in the [dynaTrace community](https://community.dynatrac
 #### Table of Contents
 * [Overview](#overview)
 * [Installation](#installation)
- * [Monitors installation](#monitorsinstallation) 
- * [Profile installation](#profileinstallation) 
 * [Configuration](#configuration)
   * [BizTalk Processes](#configuration1)
   * [Monitors configuration](#configuration2)
@@ -25,6 +23,7 @@ Find further information in the [dynaTrace community](https://community.dynatrac
  * [BizTalk Adapters Dashboard](#adapters)
  * [BizTalk Architect Dashboard](#architect)
  * [BizTalk Deep Analysis Dashboard](#deepanalysis)
+* [Database Agent](#dbagent)
 * [Problems? Questions? Suggestions?](#feedback)
 * [Additional Resources](#resources)
   * [Dynatrace AppMon Documentation](#doc)
@@ -74,12 +73,12 @@ Once you have the Processes mapped to the System Profile, you'll automatically g
 2. Click in Monitors
  - You will see 3 different preconfigured monitors.These are described in [Monitors](#monitors)
 3. For each Monitor click on Edit
- 1. Configure the Performance Counter Instance under Settings. The 3 different monitors will collect information from 3 different PerfMon Instances at 3 different Levels: BizTalk Application, MessageBox and Host.
+ 1. Configure the Performance Counter Instance under Settings. The three different monitors will collect information from three different PerfMon Instances at three different Levels: BizTalk Application, MessageBox and Host.
  2. Select the Hosts to monitor under Hosts.
 
 <a name="monitors"></a>
 ### Monitors 
-The monitors collect Performance Counters from 3 different instances which are defined at 3 different levels: BizTalk Application, MessageBox and Host.
+The monitors collect Performance Counters from three different instances which are defined at three different levels: BizTalk Application, MessageBox and Host.
 
 #### BizTalk MessageBox Performance Monitor (General Counters)
 
@@ -127,7 +126,7 @@ This dashboard provides an insight in the messaging performance counters display
 ###BizTalk Orchestration Engine Dashboard
 ![images/OrchestrationEngine.PNG](images/OrchestrationEngine.PNG)
 
-The Orchestration Engine dashboard shows rerformance counters about the orchestration health, the transactional scopes and the pending work. A timeline displays the amount of orchestration and transactional metrics per second such as orchestration created, dehydrated, rehydrated, completed and so fort. The Dyhadration threshold, dynadrations in progress as well as the allocated memory and amount of database transactions will be measured and displayed. The slowest Pipelines and Orchestrations as well as the most used ones will filtered and shown in a business transaction dashlet.
+The Orchestration Engine dashboard shows performance counters about the orchestration health, the transactional scopes and the pending work. A timeline displays the amount of orchestration and transactional metrics per second such as orchestration created, dehydrated, rehydrated, completed and so fort. The Dyhadration threshold, dynadrations in progress as well as the allocated memory and amount of database transactions will be measured and displayed. The slowest Pipelines and Orchestrations as well as the most used ones will filtered and shown in a business transaction dashlet.
 
 <a name="adapters"></a>
 ###BizTalk Adapters Dashboard
@@ -164,13 +163,21 @@ This dashboards is composed by the following dashlets:
 This dashboard will help developers understand the called methods and indentify the hotspots inside the BizTalk Server such as code running inside the XLANG BTX Engine. The MessageBox is in the transaction flow exposed as an external call with the help of a method sensor. This method is called when the XLANGStore commits it’s work and sends the message to the COM module, which then commits the message in the database. 
 
 
-<a name="feedback"></a>
-## Problems? Questions? Suggestions?
+<a name="dbagent"></a>
+## Database Agent
 
-* Post any problems, questions or suggestions to the Dynatrace Community's [Application Monitoring & UEM Forum](https://answers.dynatrace.com/spaces/146/index.html).
+![images/DatabaseAgentDashboard.PNG](images/DatabaseAgentDashboard.PNG)
+
+The [Dynatrace Database Agent](https://community.dynatrace.com/community/display/DOCDT63/Database+Monitoring) is a **must** complementary for performance analysis with BizTalk. BizTalk relies heavily in the database of the MessageBox. The messaging and orchestration engine will store and handle the lifecycle of every message in the MessageBox. This is normally a Microsoft SQL Database.
+
+The [Database agent configuration](https://community.dynatrace.com/community/display/DOCDT63/Database+Agent+Configuration) is really simple and can be done within a minute. Nothing needs to be installed in the database, this is just a JDBC connection that is configured through the dynatrace client. Just select the messagebox database, with a user and password and that's it, you are ready to go.
+
+The Database Agent will get you great insight into the Database so you can correlated all the retrieved information such as total and active sessions, batch requests per seconds, amount of SQL Compilations and Recompilations, CPU usage, Disk I/O,Slow queries, locks and tablespaces. For more information about how to leverage with the database agent, just watch the great [Online Perf Clinic – Database Diagnostics Use Cases with Dynatrace](https://www.youtube.com/watch?v=pEXfqzE-WQM) from Andy on our YouTube Chanel or check our [APM Blog](http://apmblog.dynatrace.com/) for Blogs like this [sql server plan blog](http://apmblog.dynatrace.com/2016/06/22/fixing-sql-server-plan-cache-bloat-parameterized-queries/) from Sonja.
+
 
 <a name="resources"></a>
 ## Additional Resources
+
 
 <a name="blogs"></a>
 ### Blogs
@@ -178,6 +185,8 @@ This dashboard will help developers understand the called methods and indentify 
 - [Identify Performance Bottlenecks in your BizTalk Environment – Part I](http://apmblog.dynatrace.com/2010/02/25/identify-performance-bottlenecks-in-your-biztalk-environment-part-i/)
 - [Identify Performance Bottlenecks in your BizTalk Environment – Part II](http://apmblog.dynatrace.com/2010/03/05/identify-performance-bottlenecks-in-your-biztalk-environment-part-ii/)
 - [Identify Performance Bottlenecks in your BizTalk Environment – Final Part III](http://apmblog.dynatrace.com/2010/04/01/identify-performance-bottlenecks-in-your-biztalk-environment-final-part-iii/)
+- [Online Perf Clinic – Database Diagnostics Use Cases with Dynatrace](https://www.youtube.com/watch?v=pEXfqzE-WQM)
+- [Fixing SQL Server Plan Cache Bloat with Parameterized Queries](http://apmblog.dynatrace.com/2016/06/22/fixing-sql-server-plan-cache-bloat-parameterized-queries/)
 
 
 <a name="doc"></a>
@@ -206,3 +215,9 @@ This dashboard will help developers understand the called methods and indentify 
 - [SQL Adapter Performance Counters](https://msdn.microsoft.com/en-us/library/aa578067.aspx)
 - [Windows SharePoint Services Adapter Performance Counters](https://msdn.microsoft.com/en-us/library/aa559786.aspx)
 - [BAM Performance Counters](https://msdn.microsoft.com/en-us/library/aa561554.aspx)
+
+
+<a name="feedback"></a>
+## Problems? Questions? Suggestions?
+
+* Post any problems, questions or suggestions to the Dynatrace Community's [Application Monitoring & UEM Forum](https://answers.dynatrace.com/spaces/146/index.html).
