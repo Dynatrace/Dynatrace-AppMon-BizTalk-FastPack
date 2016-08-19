@@ -24,11 +24,12 @@ Find further information in the [dynaTrace community](https://community.dynatrac
  * [BizTalk Architect Dashboard](#architect)
  * [BizTalk Deep Analysis Dashboard](#deepanalysis)
 * [Database Agent](#dbagent)
-* [Problems? Questions? Suggestions?](#feedback)
 * [Additional Resources](#resources)
   * [Dynatrace AppMon Documentation](#doc)
   * [Blogs](#blogs)
   * [BizTalk Performance Counters](#biztalkperfom)
+* [Problems? Questions? Suggestions?](#feedback)
+
 
 <a name="overview"></a>
 ## Overview
@@ -172,7 +173,7 @@ The [Dynatrace Database Agent](https://community.dynatrace.com/community/display
 
 The [Database agent configuration](https://community.dynatrace.com/community/display/DOCDT63/Database+Agent+Configuration) is really simple and can be done within a minute. Nothing needs to be installed in the database, this is just a JDBC connection that is configured through the dynatrace client. Just select the messagebox database, with a user and password and that's it, you are ready to go.
 
-The Database Agent will get you great insight into the Database so you can correlated all the retrieved information such as total and active sessions, batch requests per seconds, amount of SQL Compilations and Recompilations, CPU usage, Disk I/O,Slow queries, locks and tablespaces. For more information about how to leverage with the database agent, just watch the great [Online Perf Clinic – Database Diagnostics Use Cases with Dynatrace](https://www.youtube.com/watch?v=pEXfqzE-WQM) from Andy on our YouTube Chanel or check our [APM Blog](http://apmblog.dynatrace.com/) for Blogs like this [sql server plan blog](http://apmblog.dynatrace.com/2016/06/22/fixing-sql-server-plan-cache-bloat-parameterized-queries/) from Sonja.
+The Database Agent will get you great insight into the Database so you can correlate all the retrieved information such as total and active sessions, batch requests per seconds, amount of SQL compilations and recompilations, CPU usage, Disk I/O, slow queries, locks and tablespaces. For more information about how to leverage with the database agent, just watch the great [Online Perf Clinic – Database Diagnostics Use Cases with Dynatrace](https://www.youtube.com/watch?v=pEXfqzE-WQM) from Andy on our YouTube Chanel or check our [APM Blog](http://apmblog.dynatrace.com/) for blogs like this [sql server plan blog](http://apmblog.dynatrace.com/2016/06/22/fixing-sql-server-plan-cache-bloat-parameterized-queries/) from Sonja.
 
 
 <a name="resources"></a>
